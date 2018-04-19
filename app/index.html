@@ -1,26 +1,29 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>pwned</title>
-    <script>
-      (()=> {
-        async function fetchPws() {
-          const response = await fetch("http://localhost:3000/passwords");
-          const passwords = await response.text();
-          // TODO: parse and store passwords.
-        };
-        fetchPws();
-      })();
-    </script>
-  </head>
-  <body>
-    <h1>NIST Password Validator</h1>
+
+<head>
+  <meta charset="UTF-8">
+  <title>pwned</title>
+
+  <script src="check.js"></script>
+</head>
+
+<body>
+  <h1>NIST Password Validator</h1>
+  <div>
     <div>
       Password:
-      <input type="password" autocomplete="off" required>
-      <input type="submit" value="Check">
+      <input id="password_field" type="password" autocomplete="off" required>
+      <button id="button">Check</button>
     </div>
-  </body>
-</html>
 
+    <ul class="helper-text">
+      <li id="req" class="min">Must have an 8 character minimum</li>
+      <li id="req" class="max">Must have a 64 character maximum</li>
+      <li id="req" class="ascii">Must allow all ASCII characters and spaces (unicode optional)</li>
+      <li id="req" class="common">Must not be a common password</li>
+    </ul>
+  </div>
+</body>
+
+</html>
