@@ -90,3 +90,14 @@ describe('Testing all scenarios', function() {
 		assert.equal(true, result);
 	});
 });
+
+describe('Testing all scenarios', function() {
+	it('Should pass even if user inputs a word, that has a space in the middle, and resembles 2 adjacent words in the big list of words', function() {
+
+        const word = '99accord 99a99s99';
+        const result = check.atLeast8(word) && check.atMost64(word) && check.isASCII(word) && check.isUnique(word, sample_words); 
+
+		assert.equal(true, result);
+	});
+});
+
