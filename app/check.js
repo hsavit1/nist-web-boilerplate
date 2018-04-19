@@ -68,9 +68,6 @@ function check(passwords) {
 	button.onclick = function() {
 		var password = document.getElementById('password_field').value;
 
-		var pw = document.getElementById('a');
-		pw.innerHTML = `Password inputted: <|${password}|>`;
-
 		if (hasLength(password)) {
 			if (atLeast8(password)) {
 				if (atMost64(password)) {
